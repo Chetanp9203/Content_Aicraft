@@ -64,15 +64,15 @@ const create_content = (props: PROPS) => {
     setUpCusage(Date.now())
   }
    
-  const value = "default";
+  
   const SaveIndb = async (formData: any, slug: any, aiResp: string, name:string) => {
     const result = await db.insert(AIOutput).values({
-      formData: formData ?? value,
+      formData: formData ?? "default",
       templateSlug: slug,
-      aiResponse: aiResp ?? value,
-      createdBy: user?.primaryEmailAddress?.emailAddress ?? value,
+      aiResponse: aiResp ?? "default",
+      createdBy: user?.primaryEmailAddress?.emailAddress ?? "default",
       createdAT: moment().format('DD/MM/YYYY'),
-      name:name ?? value, 
+      name:name ?? "default", 
     });
     console.log(result);
 
