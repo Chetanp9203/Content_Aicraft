@@ -4,12 +4,12 @@ import TempCard from './TempCard'
 
 
 export interface Temp {
-  name: string,
-  desc: string,
-  icon: string,
-  category: string,
-  slug: string,
-  aiPrompt: string,
+  name: string | any,
+  desc: string | any,
+  icon: string | any,
+  category: string |any,
+  slug: string |any,
+  aiPrompt: string |any,
   form?: FORM[],
 }
 

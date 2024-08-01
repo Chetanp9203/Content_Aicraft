@@ -2,17 +2,17 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useUser } from '@clerk/nextjs';
 import { db } from '../../utils/Db';
-import { AIOutput, UserSubscription } from '../../utils/Schema';
+import { AIOutput } from '../../utils/Schema';
 import { eq } from 'drizzle-orm';
 import { TotalUsageContext } from '@/app/(context)/TotalUsageContext';
-import { UserSubscriptionContext } from '@/app/(context)/UserSubscriptionContext';
+// import { UserSubscriptionContext } from '@/app/(context)/UserSubscriptionContext';
 import { UpdateCuContext } from '@/app/(context)/UpdateCuContext';
 import { Button } from '@/components/ui/button';
 
 const Usagetrack = () => {
     const { user } = useUser();
     const { totalUsage, setTotalUsage } = useContext(TotalUsageContext);
-    const { usTotalUsage, setUSTotalUsage } = useContext(UserSubscriptionContext);
+    // const { usTotalUsage, setUSTotalUsage } = useContext(UserSubscriptionContext);
     const { updateCusage, setUpdateCsage } = useContext(UpdateCuContext);
 
     const [maxword, setmaxword] = useState(10000);
@@ -24,7 +24,6 @@ const Usagetrack = () => {
 
     useEffect(() => {
         user && GetData();
-        user && IsUserSubscribe();
     }, [user]);
 
     useEffect(() => {
@@ -39,13 +38,13 @@ const Usagetrack = () => {
         setTotalUsage(total);
     };
 
-    const IsUserSubscribe = async () => {
-        const result = await db.select().from(UserSubscription).where(eq(UserSubscription.email, user?.primaryEmailAddress?.emailAddress));
-        if (result.length > 0) {
-            setUSTotalUsage(true);
-            setmaxword(100000);
-        }
-    };
+    // const IsUserSubscribe = async () => {
+    //     const result = await db.select().from(UserSubscription).where(eq(UserSubscription.email, user?.primaryEmailAddress?.emailAddress));
+    //     if (result.length > 0) {
+    //         setUSTotalUsage(true);
+    //         setmaxword(100000);
+    //     }
+    // };
 
     return (
         <div className='m-5'>

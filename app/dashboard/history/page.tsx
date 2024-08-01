@@ -10,9 +10,10 @@ import { Temp } from '../_components/TemplateList';
 import { Button } from '@/components/ui/button';
 
 
+
 export interface HISTORY {
   id: Number;
-  formData: string;
+  formData: string | null;
   aiResponse: string | null;
   templateSlug: string;
   createdBy: string | null;

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { SideNav } from './_components/SideNav';
 import Header from './_components/Header';
 import { TotalUsageContext } from '../(context)/TotalUsageContext';
-import { UserSubscriptionContext } from '../(context)/UserSubscriptionContext';
+// import { UserSubscriptionContext } from '../(context)/UserSubscriptionContext';
 import { UpdateCuContext } from '../(context)/UpdateCuContext';
 
 const Layout = ({
@@ -18,7 +18,7 @@ const Layout = ({
 
     return (
         <TotalUsageContext.Provider value={{ totalUsage, setTotalUsage }}>
-            <UserSubscriptionContext.Provider value={{ usTotalUsage, setUSTotalUsage }}>
+            {/* <UserSubscriptionContext.Provider value={{ usTotalUsage, setUSTotalUsage }}> */}
                 <UpdateCuContext.Provider value={{ updateCusage, setUpCusage }}>
                     <div className='bg-slate-100 flex'>
 
@@ -54,7 +54,7 @@ const Layout = ({
                         </div>
                     </div>
                 </UpdateCuContext.Provider>
-            </UserSubscriptionContext.Provider>
+            {/* </UserSubscriptionContext.Provider> */}
         </TotalUsageContext.Provider>
     )
 }

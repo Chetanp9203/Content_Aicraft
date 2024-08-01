@@ -12,14 +12,14 @@ import { useToast } from "@/components/ui/use-toast";
 import Link from 'next/link';
 
 interface PROPS {
-  selectedTemp?: Temp;
+  selectedTemp?: Temp ;
   userformInput: any;
   loading: boolean,
 }
 const FormSection = ({ selectedTemp, userformInput, loading }: PROPS) => {
   const onSubmit = (e: any) => {
     e.preventDefault();
-    if(totalUsage > 7000)
+    if(totalUsage > 10000)
     {
        return;
     }
@@ -55,7 +55,7 @@ const FormSection = ({ selectedTemp, userformInput, loading }: PROPS) => {
           </div>
         ))}
         <Button type='submit' className='w-full py-3' disabled={loading}  onClick={() => {
-          if(totalUsage > 7000)
+          if(totalUsage > 10000)
           {
             toast({
               title: "Credit Usage Limit Reached!.",
@@ -73,3 +73,9 @@ const FormSection = ({ selectedTemp, userformInput, loading }: PROPS) => {
 }
 
 export default FormSection
+
+
+
+
+
+

@@ -9,11 +9,11 @@ import {
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import axios from 'axios'
-import { UserSubscription } from '../../utils/Schema'
+// import { UserSubscription } from '../../utils/Schema'
 import { useUser } from '@clerk/nextjs'
 import { db } from '../../utils/Db'
 import moment from 'moment'
-import { UserSubscriptionContext } from '@/app/(context)/UserSubscriptionContext'
+// import { UserSubscriptionContext } from '@/app/(context)/UserSubscriptionContext'
 
 const pricingItems = [
   {

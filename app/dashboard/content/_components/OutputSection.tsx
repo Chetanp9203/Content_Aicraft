@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Copy } from 'lucide-react';
 
 export interface PROPS {
-  aiOutput: string;
+  aiOutput: string | any;
 }
 const OutputSection = ({ aiOutput }: PROPS) => {
   // const editorRef: any = useRef();
