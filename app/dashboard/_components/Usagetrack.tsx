@@ -18,7 +18,9 @@ const Usagetrack = () => {
     const [maxword, setmaxword] = useState(10000);
 
     const GetData = async () => {
-        const result = await db.select().from(AIOutput).where(eq(AIOutput.createdBy, user?.primaryEmailAddress?.emailAddress));
+
+        const emailAddress = user?.primaryEmailAddress?.emailAddress ?? 'default@example.com';
+        const result = await db.select().from(AIOutput).where(eq(AIOutput.createdBy, emailAddress));
         GetTotalUsage(result);
     };
 
