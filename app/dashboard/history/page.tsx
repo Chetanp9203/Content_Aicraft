@@ -37,12 +37,12 @@ import React from 'react'
 const page = async () => {
 
   const user = await currentUser();
-
+  const emailAddress = user?.primaryEmailAddress?.emailAddress ?? 'default@example.com';
 
   const Historylist: HISTORY[] = await db
     .select()
     .from(AIOutput)
-    .where(eq(AIOutput.createdBy, user?.primaryEmailAddress?.emailAddress))
+    .where(eq(AIOutput.createdBy, emailAddress))
     .orderBy(desc(AIOutput.id));
 
 
