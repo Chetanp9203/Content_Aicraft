@@ -21,10 +21,7 @@ export interface HISTORY {
   name: string | null;
 }
 
-// const GetIcon = (slug : string) => {
-//   const template: Temp | any = Template?.find((item)=>item.icon== item.slug)
-//   return template;
-// }
+
 
 const GetIcon = (slug: string) => {
   const template: Temp | any = Template?.find((item) => item.slug === slug);

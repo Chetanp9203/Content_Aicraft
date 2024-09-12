@@ -1,12 +1,11 @@
 
-
 export default  [
     {
         name:'Blog Title',
         desc:"An AI tool that delivers standout and memorable blog post titles, helping you capture your audience's attention.",
         category:'Blog',
         icon:'https://cdn-icons-png.flaticon.com/128/4693/4693265.png',
-        aiPrompt:'Give blog title based on given blog topic & outline.',
+        aiPrompt:'Give blog title based on given blog topic & outline in point wise manner in rich text editor format',
         slug:'generate-blog-title',
         form:[
             {
@@ -18,8 +17,7 @@ export default  [
             {
                 label:'Enter blog outline (optional)',
                 field:'textarea',
-                name:'outline',
-                
+                name:'outline',  
             }
         ]
     },
@@ -29,7 +27,7 @@ export default  [
         category: 'blog',
         icon: 'https://cdn-icons-png.flaticon.com/128/9079/9079294.png',
         slug: 'blog-content-generation',
-        aiPrompt: 'Generate Blog Content based on topic and outline',
+        aiPrompt: 'Generate Blog Content based on topic and outline in rich text ediotr format',
         form: [
             {
                 label: 'Enter your blog topic',
@@ -51,7 +49,7 @@ export default  [
         category: 'Blog',
         icon: 'https://cdn-icons-png.flaticon.com/128/9660/9660565.png',
         slug: 'blog-topic-idea',
-        aiPrompt: 'Generates trending Blog Topic Ideas in bullet point, (no Description) based on niche',
+        aiPrompt: 'Generates trending Blog Topic Ideas in bullet point, (no Description) based on niche in rich text editor format',
         form: [
             {
                 label: 'Enter your Niche',
@@ -61,13 +59,14 @@ export default  [
             },
         ]
     },
+    
     {
         name: 'Youtube SEO Title',
         desc:"An AI tool that crafts viral and attention-grabbing YouTube video titles in your preferred language, optimizing for maximum SEO impact.",
         category: 'Youtube Tools',
         icon: 'https://cdn-icons-png.flaticon.com/128/400/400426.png',
         slug: 'youtube-seo-title',
-        aiPrompt: 'Give me Best SEO optimized high ranked  title ideas bullet wise only based on keywords and outline',
+        aiPrompt: 'Give me Best SEO optimized high ranked  title ideas bullet wise only based on keywords and outline in rich text editor format',
         form: [
             {
                 label: 'Enter your youtube video topic keyowords',
@@ -81,16 +80,14 @@ export default  [
                 name: 'outline'
             }
         ]
-
     },
     {
-
         name: 'Youtube Description',
         desc: "An AI tool that crafts engaging and optimized YouTube descriptions, ensuring your videos reach a wider audience.",
         category: 'Youtube Tool',
         icon: 'https://cdn-icons-png.flaticon.com/128/10101/10101391.png',
         slug: 'youtube-description',
-        aiPrompt: 'Generate Youtube descriptions with emoji under 4-5 lines based on topic and outline',
+        aiPrompt: 'Generate Youtube descriptions with emoji under 4-5 lines based on topic and outline in rich text editor format',
         form: [
             {
                 label: 'Enter your youtube topic/title',
@@ -111,7 +108,7 @@ export default  [
         category: 'Youtube Tool',
         icon: 'https://cdn-icons-png.flaticon.com/128/10884/10884882.png',
         slug: 'youtube-tag',
-        aiPrompt: 'Generate 10 Youtube tags in bullet point based on title and outline',
+        aiPrompt: 'Generate 10 Youtube tags in bullet point based on title and outline in rich text editor format',
 
         form: [
             {
@@ -134,7 +131,7 @@ export default  [
         icon: 'https://cdn-icons-png.flaticon.com/128/2992/2992156.png',
         category: 'Rewriting Tool',
         slug: 'rewrite-article',
-        aiPrompt: 'Rewrite given article without any Plagiarism',
+        aiPrompt: 'Rewrite given article without any Plagiarism in rich text editor format',
         form: [
             {
                 label: 'Provide your Article/Blogpost or any other content to rewrite.',
@@ -144,28 +141,15 @@ export default  [
             }
         ]
     },
-    // {
-    //     name: 'Text Improver',
-    //     desc: 'This handy tool refines your writing, eliminating errors and redundancies for a clear, readable result. It also offers a comprehensive tone analysis and suggests better word choices.',
-    //     icon: 'https://cdn-icons-png.flaticon.com/128/3055/3055740.png',
-    //     category: 'Writing Assistant',
-    //     slug: 'text-improver',
-    //     aiPrompt: 'Given textToImprove, Rewrite text without any grammar mistake and professionally in rich text editor format',
-    //     form: [
-    //         {
-    //             label: 'Enter text that you want to re-write or improve',
-    //             field: 'textarea',
-    //             name: 'textToImprove'
-    //         }
-    //     ]
-    // },
+
+   
     {
         name: 'Add Emojis to Text',
         desc: "Boost your text's engagement with this AI tool that adds the  emojis to enhance your message. 🚀📝",
         icon: 'https://cdn-icons-png.flaticon.com/128/11202/11202612.png',
         category: 'blog',
         slug: 'add-emoji-to-text',
-        aiPrompt: 'Give ways to Add Emoji to outline text depends on outline and rewrite it.',
+        aiPrompt: 'Give ways by adding Emoji to outline text depends on outline in bullets in rich text ediotr format.',
         form: [
             {
                 label: 'Enter your text to add emojis',
@@ -182,7 +166,7 @@ export default  [
         category: 'blog',
        
         slug: 'instagram-post-generator',
-        aiPrompt: 'Generate  Instagram captions based on a given keywords',
+        aiPrompt: 'Generate  Instagram captions based on a given keywords in   rich text editor format',
         form: [
             {
                 label: 'Enter Keywords for your post',
@@ -200,7 +184,7 @@ export default  [
         category: 'blog',
        
         slug: 'instagram-hash-tag-generator',
-        aiPrompt: 'Generate 15 Instagram hash tag based on a given keywords',
+        aiPrompt: 'Generate 15 Instagram hash tag based on a given keywords ',
         form: [
             {
                 label: 'Enter Keywords for your instagram hastag',
@@ -208,27 +192,32 @@ export default  [
                 name: 'keywords',
                 required:true
             },
-           
         ]
     },
-    // {
-    //     name: 'Instagram Post/Reel Idea',
-    //     desc: 'An AI tool that generate New and trending instagram idea depends on your niche',
-    //     icon: 'https://cdn-icons-png.flaticon.com/128/15050/15050908.png',
-    //     category: 'instagram',
-       
-    //     slug: 'instagram-post-idea-generator',
-    //     aiPrompt: 'Generate 5-10 Instagram idea depends on niche with latest trend and give output in rich text editor format',
-    //     form: [
-    //         {
-    //             label: 'Enter Keywords / Niche for your instagram idea',
-    //             field: 'input',
-    //             name: 'keywords',
-    //             required:true
-    //         },
-           
-    //     ]
-    // },
+   
+    {
+        name: "Tweet",
+        desc: "An AI tool that generate Tweet based on your post  and outline information.",
+        category: "Tweet",
+        icon: "https://cdn-icons-png.flaticon.com/128/5968/5968830.png",
+        aiPrompt:
+          "Give me 280 characters of tweet example on given niche & outline topic",
+        slug: "generate-tweet-post",
+        form: [
+          {
+            label: "Enter your tweet niche",
+            field: "input",
+            name: "niche",
+            required: true,
+          },
+          {
+            label: "Enter tweet outline",
+            field: "textarea",
+            name: "outline",
+          },
+        ],
+      },
+      
     {
         name: 'English Grammer Check',
         desc: "Boost your writing with this AI tool that offers precise English grammar checks, ensuring your content is flawless and well-structured.",
@@ -236,7 +225,7 @@ export default  [
         category: 'english',
        
         slug: 'english-grammer-checker',
-        aiPrompt: 'Rewrite the inputText by correcting the grammer and',
+        aiPrompt: 'Rewrite the inputText by correcting the grammer',
         form: [
             {
                 label: 'Enter text to correct the grammer',
@@ -247,60 +236,7 @@ export default  [
            
         ]
     },
-    {
-        name: 'Write Code',
-        desc: "Effortlessly generate high-quality code with this AI tool, designed to enhance your coding efficiency and productivity.",
-        icon:'https://cdn-icons-png.flaticon.com/128/3242/3242257.png',
-        category: 'Coding',
-       
-        slug: 'write-code',
-        aiPrompt: 'Depends on user codeDescription write a code',
-        form: [
-            {
-                label: 'Enter description of code you want along with Programming Lang',
-                field: 'textarea',
-                name: 'codeDescripton',
-                required:true
-            },
-           
-        ]
-    },
-    {
-        name: 'Explain Code',
-        desc: "Effortlessly decode and grasp complex programming logic with this AI tool, designed to offer intuitive explanations and insights into your code.",
-        icon:'https://cdn-icons-png.flaticon.com/128/6404/6404558.png',
-        category: 'Coding',
-       
-        slug: 'explain-code',
-        aiPrompt: 'Depends on user codeDescription explain code line by line',
-        form: [
-            {
-                label: 'Enter code which you want to understand',
-                field: 'textarea',
-                name: 'codeDesscripton',
-                required:true
-            },
-           
-        ]
-    },
-    {
-        name: 'Code Bug Detector',
-        desc: 'This tool analyzes your input, like error messages and code snippets, to pinpoint and fix bugs, offering detailed solutions and alternatives in a straightforward, user-friendly way.',
-        icon:'https://cdn-icons-png.flaticon.com/128/5958/5958839.png',
-        category: 'code-bug-detector',
-       
-        slug: 'code-bug-detector',
-        aiPrompt: 'Depends on user codeInput find bug in code and give solution.',
-        form: [
-            {
-                label: 'Enter code which you want to debug',
-                field: 'textarea',
-                name: 'codeInput',
-                required:true
-            },
-           
-        ]
-    },
+   
     {
         name: 'Tagline Generator',
         desc: 'Struggling to find the perfect tagline for your brand? Let our AI-tool assist you in creating a tagline that stands out.',
@@ -308,7 +244,7 @@ export default  [
         category: 'Marketting',
        
         slug: 'tagline-generator',
-        aiPrompt: 'Depends on user productName and outline generate catchy 5-10 tagline for the business product.',
+        aiPrompt: 'Depends on user productName and outline, generate catchy 5-10 tagline for the business product in bullet points in rich text editor format',
         form: [
             {
                 label: 'Product/Brand Name',
@@ -332,7 +268,7 @@ export default  [
         category: 'Marketing',
        
         slug: 'product-description',
-        aiPrompt: 'Depends on user productName and description generate small description for product for e-commerece business.',
+        aiPrompt: 'Depends on user productName and description generate small description for product for e-commerece business in rich text editor format',
         form: [
             {
                 label: 'Product Name',
