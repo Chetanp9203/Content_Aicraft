@@ -57,7 +57,7 @@ const create_content = (props: PROPS) => {
 
     setAiOutput(result?.response.text());
 
-    console.log(selectedTemp?.name);
+    // console.log(selectedTemp?.name);
     
     await SaveIndb(formData, selectedTemp?.slug, result?.response.text(), selectedTemp?.name);
     setLoading(false);
@@ -73,7 +73,7 @@ const create_content = (props: PROPS) => {
       createdAT: moment().format('DD/MM/YYYY'),
       name:name ?? "default", 
     });
-    console.log(result);
+    
 
   }
 
@@ -91,7 +91,7 @@ const create_content = (props: PROPS) => {
         } loading={loading} />
         {/* output-section */}
         <div className='col-span-2'>
-          <OutputSection aiOutput={aiOutput} />
+          <OutputSection aiOutput={aiOutput ?? ""} />
 
         </div>
       </div>

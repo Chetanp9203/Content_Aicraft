@@ -14,6 +14,8 @@ import { useUser } from '@clerk/nextjs'
 import { db } from '../../utils/Db'
 import moment from 'moment'
 // import { UserSubscriptionContext } from '@/app/(context)/UserSubscriptionContext'
+import { useRouter } from 'next/navigation'
+
 
 const pricingItems = [
   {
@@ -63,22 +65,20 @@ const pricingItems = [
 
 
 const page = () => {
+  const router = useRouter();
 
   const { user } = useUser();
   const [loading, setLoading] = useState(false);
 
   // const { userSubscription, setUserSubscription} = useContext(UserSubscriptionContext);
 
-  // const OnSubcription=()=>{
-  //   setLoading(true);
-  //    axios.post('/api/create-subscription',{}).then(resp=>{
-  //     console.log(resp.data);
-  //     OnPayment(resp.data.id)
-  //    },(error=>{
-  //     setLoading(false);
-  //    }))
-  // }
+  const handleCheckout= async()=>{
 
+    const response = await axios.post("/api/Upgrade/page.js");
+    // push user to the stripe url
+    router.push(response.data.url);
+  }
+  
   // const OnPayment=(subId:string)=>{
   //   const options={
   //     "key":process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
@@ -189,7 +189,7 @@ const page = () => {
                       <Button variant={'btn_f'} className='w-full'>Try Now</Button>
                     </Link>
                   ) : (
-                    <Button disabled={loading} variant={'btn_p'} className='w-full mx-3 '> {loading && <Loader2Icon className='animate-spin' />}
+                    <Button disabled={loading} variant={'btn_p'} className='w-full mx-3 ' > {loading && <Loader2Icon className='animate-spin' />}
                       {/* {userSubscription? 'Active Plan': 'Get Started'} */}
                       Get Started
                     </Button>
